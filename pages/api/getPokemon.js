@@ -27,9 +27,9 @@ export default (req, res) => {
        hp: stats.hp,
       })
   }).catch(err => {
-    console.log(err)
-    res.status(err.response.status).json({
-      message: err.message
+      console.log(err)
+      res.status(err.response.status).json({
+        message: err.message
     })
   })
 }
