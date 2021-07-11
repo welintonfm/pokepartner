@@ -12,9 +12,6 @@ export default (req, res) => {
       stats[type.stat.name.replace("-", "_")] = type.base_stat
     });
 
-    console.log(stats)
-    console.log(stats.attack)
-
     res.status(200).json({
        name: pokemon.name,
        artwork: pokemon.sprites.other['official-artwork'].front_default,
