@@ -37,7 +37,8 @@
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    height: 100%;
 }
 
 .pokemon-filtered-list div{
@@ -45,4 +46,5 @@
     height: 70px;
     position: relative;
     margin-top: 100px;
+    margin-bottom: 50px;
 }

@@ -14,7 +14,7 @@ const PokemonList = (props) => {
     return(
         <ul className="pokemon-list">
             {props.pokemons.map((pokemon, index)=> {
-                return <PokemonCard name={pokemon.name} url={pokemon.url} number={`#${zeroFill(index, 3)}`}></PokemonCard>
+                return <PokemonCard key={index} name={pokemon.name} url={pokemon.url} number={`#${zeroFill(pokemon.url.split("/")[6], 3)}`}></PokemonCard>
             })}
         </ul>
     )
