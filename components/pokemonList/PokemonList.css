@@ -1,0 +1,21 @@
+.pokemon-list{
+    overflow-y: scroll;
+    height: 75%;
+    width: 400px;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #C4C4C422;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #C4C4C499;
+    border-radius: 10px;
+}

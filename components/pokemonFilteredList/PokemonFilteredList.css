@@ -1,0 +1,48 @@
+.pokemon-filtered-list input[type="text"]{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 55px 20px 46px;
+    box-shadow: 0px 14px 28px rgba(27, 27, 27, 0.16);
+    backdrop-filter: blur(57px);
+    border-radius: 57px;
+    width: 350px;
+    height: 70px;
+    cursor: pointer;
+    background: #FFFFFF29;
+    border-image-source: linear-gradient(132deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 61.87%);
+    margin-bottom: 10px;
+     color: white;
+    font-size: 26px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+}
+
+.pokemon-filtered-list input[type="text"]::placeholder{
+    color: white;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+}
+
+.pokemon-filtered-list svg{
+    color: white;
+    font-size: 50px;
+    right: 10px;
+    top: 10px;
+    position: absolute;
+}
+
+.pokemon-filtered-list{
+    overflow-y: hidden;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pokemon-filtered-list div{
+    width: 350px;
+    height: 70px;
+    position: relative;
+    margin-top: 100px;
+}
