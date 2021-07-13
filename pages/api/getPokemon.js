@@ -24,7 +24,7 @@ export default (req, res) => {
        sp_attack: stats.special_attack,
        defense: stats.defense,
        sp_defense: stats.special_defense,
-       hp: stats.hp,
+       hp: stats.hp
       })
   }).catch(err => {
       console.log(err)

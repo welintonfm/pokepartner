@@ -6,6 +6,7 @@ import Axios from "axios"
 import PokemonCard from '../components/pokemonList/PokemonCard'
 import PokemonFilteredList from '../components/pokemonFilteredList/PokemonFilteredList'
 import React, {useState, useEffect} from 'react'
+import PokemonDetailHeader from '../components/pokemonDetailHeader/PokemonDetailHeader'
 
 async function getInitialPokemon(){
   var pokemons;
@@ -39,6 +40,7 @@ const Home: React.FC<{initial_pokemons}> = (props) =>  {
      </div>
      <div className="content-box">
       <div className="content">
+        <PokemonDetailHeader pokemon={pokemon} />
         <div className="metal-border"></div>
       </div>
      </div>
