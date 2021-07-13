@@ -8,7 +8,8 @@ import PokemonFilteredList from '../components/pokemonFilteredList/PokemonFilter
 import React, {useState, useEffect} from 'react'
 import PokemonDetailHeader from '../components/pokemonDetailHeader/PokemonDetailHeader'
 import PokemonStatList from '../components/pokemonStats/PokemonStatList'
-import {Router, useRouter} from 'next/router'
+import PokemonAbilitiesList from '../components/pokemonAbilities/PokemonAbilitiesList'
+import PokemonDetailFooter from '../components/pokemonDetailFooter/PokemonDetailFooter'
 
 async function getInitialPokemon(){
   var pokemons;
@@ -51,7 +52,7 @@ const Home: React.FC<{initial_pokemons}> = (props) =>  {
      <div className="content-box">
       <div className="content">
         {pokemon && <PokemonDetailHeader pokemon={pokemon} />}
-        {pokemon && <PokemonStatList pokemon={pokemon} />}
+        {pokemon && <PokemonDetailFooter pokemon={pokemon} />}
         <div className="metal-border"></div>
       </div>
      </div>

@@ -6,7 +6,10 @@ import '../components/pokemonFilteredList/PokemonFilteredList.css'
 import '../components/pokemonDetailHeader/PokemonDetailHeader.css'
 import '../components/pokemonStats/PokemonStat.css'
 import '../components/pokemonStats/PokemonStatList.css'
-
+import '../components/pokemonAbilities/PokemonAbilitiesList.css'
+import '../components/pokemonAbilities/PokemonAbilityButton.css'
+import '../components/pokemonAbilities/PokemonAbilityTextBox.css'
+import '../components/pokemonDetailFooter/PokemonDetailFooter.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
