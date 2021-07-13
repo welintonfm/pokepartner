@@ -1,0 +1,27 @@
+.pokemon-stat-list ul{
+    list-style: none;
+}
+.pokemon-stat-list h2{
+    color: white;
+    text-transform: uppercase;
+    margin-left: 130px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 10px;
+}
+
+.pokemon-stat-list{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.pokemon-stat-list{
+    justify-self: flex-end;
+    height: 100%;
+    margin-bottom: 10px;
+}
