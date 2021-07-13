@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {useState, useEffect} from 'react';
 import PokemonCard from './PokemonCard';
 
 function zeroFill(number, width) {
@@ -10,11 +10,14 @@ function zeroFill(number, width) {
 }
 
 const PokemonList = (props) => {
+    const [chosen_pokemon, setChosenPokemon] = useState("")
+
+    useEffect(() => props.getPokemon(chosen_pokemon));
 
     return(
         <ul className="pokemon-list">
             {props.pokemons.map((pokemon, index)=> {
-                return <PokemonCard key={index} name={pokemon.name} url={pokemon.url} number={`#${zeroFill(pokemon.url.split("/")[6], 3)}`}></PokemonCard>
+                return <PokemonCard getPokemon={chosen_pokemon => setChosenPokemon(chosen_pokemon)} key={index} name={pokemon.name} url={pokemon.url.split("/")[6]} number={`${zeroFill(pokemon.url.split("/")[6], 3)}`}></PokemonCard>
             })}
         </ul>
     )

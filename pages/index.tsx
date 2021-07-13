@@ -5,7 +5,7 @@ import PokemonList from '../components/pokemonList/PokemonList'
 import Axios from "axios"
 import PokemonCard from '../components/pokemonList/PokemonCard'
 import PokemonFilteredList from '../components/pokemonFilteredList/PokemonFilteredList'
-
+import React, {useState, useEffect} from 'react'
 
 async function getInitialPokemon(){
   var pokemons;
@@ -26,11 +26,16 @@ export const getStaticProps = async ({ params }) =>{
 }
 
 const Home: React.FC<{initial_pokemons}> = (props) =>  {
+  const [pokemon, setPokemon] = useState('')
+
+  useEffect(() => {
+    console.log(pokemon)
+  });
 
   return (
    <div className="container">
      <div className="sidebar">
-       <PokemonFilteredList pokemons={props.initial_pokemons} />
+       <PokemonFilteredList pokemons={props.initial_pokemons} getPokemon={pokemon => setPokemon(pokemon)}/>
      </div>
      <div className="content-box">
       <div className="content">

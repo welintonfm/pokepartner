@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PokemonList from '../pokemonList/PokemonList';
 import {BiSearch} from 'react-icons/bi'
 
@@ -23,9 +23,12 @@ function filterPokemons(initial_pokemons,value){
     return filtered_pokemons
 }
 
-
 const PokemonFilteredList = (props) => {
     let [filtered_pokemons, setFilteredPokemons] = useState(props.pokemons)  
+    const [pokemon, setPokemon] = useState('')
+
+    useEffect(() => props.getPokemon(pokemon));
+    
     return(
         <div className="pokemon-filtered-list">
             <div><input type="text" onChange={event => {
@@ -35,7 +38,7 @@ const PokemonFilteredList = (props) => {
                     console.log(filtered_pokemons)
                 }} placeholder="name or number..."/><BiSearch /></div>
             
-            <PokemonList pokemons={filtered_pokemons}></PokemonList>
+            <PokemonList pokemons={filtered_pokemons} getPokemon={pokemon => setPokemon(pokemon)}></PokemonList>
         </div>
     )
 }
