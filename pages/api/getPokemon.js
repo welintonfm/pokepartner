@@ -19,12 +19,14 @@ export default (req, res) => {
        height: pokemon.height,
        types: types,
        abilities: abilities,
-       speed: stats.speed,
-       attack: stats.attack,
-       sp_attack: stats.special_attack,
-       defense: stats.defense,
-       sp_defense: stats.special_defense,
-       hp: stats.hp,
+       stats:{
+        spd: stats.speed,
+        atk: stats.attack,
+        sp_atk: stats.special_attack,
+        def: stats.defense,
+        sp_def: stats.special_defense,
+        hp: stats.hp
+       }
       })
   }).catch(err => {
       console.log(err)
