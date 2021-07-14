@@ -3,7 +3,6 @@
     height: 75%;
     width: 400px;
 }
-
 ::-webkit-scrollbar {
     width: 20px;
 }
@@ -18,4 +17,25 @@
 ::-webkit-scrollbar-thumb {
     background: #C4C4C499;
     border-radius: 10px;
+}
+
+
+@media (max-width: 1366px)
+{
+    .pokemon-list{
+        width: 300px;
+    }
+}
+
+@media (max-width: 1279px)
+{
+    .pokemon-list{
+        overflow-x: scroll;
+        overflow-y: visible;
+        height: auto;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        padding-left: 10px;
+    }
 }

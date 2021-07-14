@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import ReactDOM from "react-dom";
 import Axios from 'axios'
 
 async function getAbility(url, callback){
@@ -8,7 +9,6 @@ async function getAbility(url, callback){
             return ability != null;
           })[0]
         callback(ability)
-        console.log(ability)
         return ability
     }).catch(err => {
         console.error(err)
@@ -17,10 +17,16 @@ async function getAbility(url, callback){
 }
 
 const PokemonAbilityButton = (props) => {
+    const [active, setActive] = useState(0)
 
     return(
         <li>
-            <button className="ability-button" onClick={async () => getAbility(props.url, props.getAbility)}>{props.ability}</button>
+            <button className={`ability-button ${(props.componentKey == props.actived) ? 'active-ability' : ' '}`} 
+                onClick={async () => {
+                    getAbility(props.url, props.getAbility)
+                    props.setActiveButton(props.componentKey)
+                }}>{props.ability}
+            </button>
         </li>
     )
 }

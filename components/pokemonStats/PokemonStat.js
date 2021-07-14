@@ -5,7 +5,7 @@ const PokemonStat = (props) => {
     return(
         <li className="pokemon-stat" key={props.stat.title} >
             <p className="stat-title">{props.stat.title}</p>
-            <div className="stat-bar" style={{width:points * 1.4}}></div>
+            <div className="stat-bar" style={{width: 'calc('+ points +'* 0.05vw)'}}></div>
             <p className="stat-points"><strong>{points}</strong>/255</p>
         </li>
     )

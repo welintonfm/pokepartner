@@ -6,7 +6,7 @@ const PokemonDetailHeader = (props) => {
         <div className="pokemon-detail-header">
             <div className="header">
                 <p className="pokemon-number">{props.pokemon.number}</p>
-                <img src="https://yacenter.org/wp-content/uploads/2016/01/logo_placeholder-300x167.png"></img>
+                <img src="logo.png"></img>
             </div>
             <div className="header-info">
                 <img className="pokemon-artwork" src={props.pokemon.artwork}></img>

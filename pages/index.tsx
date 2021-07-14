@@ -10,6 +10,8 @@ import PokemonDetailHeader from '../components/pokemonDetailHeader/PokemonDetail
 import PokemonStatList from '../components/pokemonStats/PokemonStatList'
 import PokemonAbilitiesList from '../components/pokemonAbilities/PokemonAbilitiesList'
 import PokemonDetailFooter from '../components/pokemonDetailFooter/PokemonDetailFooter'
+import PokemonContent from '../components/pokemonContent/PokemonContent'
+import PokemonTypeButton from '../components/pokemonType/PokemonTypeButton'
 
 async function getInitialPokemon(){
   var pokemons;
@@ -21,17 +23,6 @@ async function getInitialPokemon(){
   return pokemons;
 }
 
-async function getBulbassaur(){
-  await Axios.get(`/api/getPokemon?pokemon_id=1`).then((response) => {
-      let pokemon = response.data 
-      return pokemon
-  }).catch(err => {
-    console.error(err)
-    return
-  })
-}
-
-
 export const getStaticProps = async ({ params }) =>{
   const initial_pokemons = await getInitialPokemon()
   return {
@@ -41,22 +32,33 @@ export const getStaticProps = async ({ params }) =>{
 }
 const Home: React.FC<{initial_pokemons}> = (props) =>  {
   const [pokemon, setPokemon] = useState()
-  useEffect(() =>{
-  })
+  const [type, setType] = useState()
+  const [pokemonList, setPokemonList] = useState(props.initial_pokemons)
 
   return (
+  <>
+    <Head>
+      <title>PokePartner</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="description" content="Pokedex desenvolvida em React e NextJs"></meta>
+    </Head>
    <div className="container">
-     <div className="sidebar">
-       <PokemonFilteredList pokemons={props.initial_pokemons} getPokemon={pokemon => setPokemon(pokemon)}/>
-     </div>
-     <div className="content-box">
-      <div className="content">
-        {pokemon && <PokemonDetailHeader pokemon={pokemon} />}
-        {pokemon && <PokemonDetailFooter pokemon={pokemon} />}
-        <div className="metal-border"></div>
+      <div className="sidebar">
+        <PokemonFilteredList type={type} resetType={type => setType(type)} pokemon={pokemon} pokemons={pokemonList} getPokemon={pokemon => setPokemon(pokemon)}/>
       </div>
-     </div>
+      <div className="content-box">
+      {!pokemon ?
+          <div className="home">
+            <img src="logo.png" alt="PokePartner" />
+            <p>Escolha o Pokémon que deseja ver as informações.</p>
+          </div> :
+        <div className="content">
+          {pokemon && <PokemonContent getType={type => setType(type)} pokemon={pokemon} />}
+          <div className="metal-border"></div>
+        </div>}
+      </div>
    </div>
+   </>
   )
 }
 

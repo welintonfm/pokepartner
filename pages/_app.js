@@ -10,6 +10,8 @@ import '../components/pokemonAbilities/PokemonAbilitiesList.css'
 import '../components/pokemonAbilities/PokemonAbilityButton.css'
 import '../components/pokemonAbilities/PokemonAbilityTextBox.css'
 import '../components/pokemonDetailFooter/PokemonDetailFooter.css'
+import '../components/pokemonType/PokemonTypeButton.css'
+import '../components/pokemonContent/PokemonContent.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />

@@ -15,11 +15,12 @@
 
 .stat-title{
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 400;
     width: 100px;
     text-align: right;
     margin-right: 10px;
+    color: #ffffff88;
 }
 
 .stat-points{
@@ -31,4 +32,47 @@
     font-weight: 700;
     font-size: 24px;
     margin-left: 10px;
+}
+
+@media (max-width: 1366px)
+{   
+    .stat-bar{
+        height: 15px;
+    }
+    
+    .stat-title{
+        font-size: 16px;
+    }
+    
+    .stat-points{
+        font-size: 16px;
+    }
+    
+    .stat-points strong{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1279px)
+{
+    .pokemon-stat{
+        display: flex;
+        margin-bottom: 5px;
+        color: white;
+        align-items: center;
+    }
+
+    .stat-title{
+        width: 60px;
+    }
+    
+    
+    .stat-points{
+        font-size: 16px;
+        font-weight: 100;
+    }
+    
+    .stat-points strong{
+        font-size: 18px;
+    }
 }

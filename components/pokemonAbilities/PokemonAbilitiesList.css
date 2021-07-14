@@ -3,7 +3,6 @@
     text-transform: uppercase;
     margin-left: 130px;
     margin-bottom: 20px;
-    margin-top: 50px;
     font-size: 18px;
     font-weight: 900;
     letter-spacing: 10px;
@@ -22,4 +21,19 @@
 
 .abilities-list div{
     display: flex;
+}
+
+@media (max-width: 1279px)
+{
+    .abilities-list h2{
+        margin-left: 0px;
+    }
+    
+    .abilities-list{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
 }

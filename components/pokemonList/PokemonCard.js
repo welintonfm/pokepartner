@@ -13,7 +13,11 @@ async function getPokemonData(pokemon_id, getPokemon, number){
 }
 const PokemonCard = (props) => {
     return(
-        <li className="pokemon-card" key={props.name} onClick={async() => getPokemonData(props.url, props.getPokemon, props.number)}>
+        <li className={`pokemon-card ${(props.componentKey == props.actived) ? 'pokemon-card-active' : ' '}`} key={props.name}
+            onClick={async() => {
+                getPokemonData(props.url, props.getPokemon, props.number)
+                props.setActiveButton(props.componentKey)
+            }}>
             <p className="pokemon-card-number">#{props.number}</p>
             <p className="pokemon-card-name">{props.name.replace("-", " ")}</p>
         </li>
