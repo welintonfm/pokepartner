@@ -1,0 +1,34 @@
+.ability-text-box{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    backdrop-filter: blur(57px);
+    border-radius: 25px;
+    color: white;
+    width: 250px;
+    height: 200px;
+    background: #FFFFFF29;
+    border: 1px solid #ffffff29;
+    margin-bottom: 10px;
+    font-size: 16px;
+    margin-left: 20px;
+    text-align: justify;
+    hyphens: auto;
+}
+
+@media (max-width: 1366px)
+{
+    .ability-text-box{
+        width: 200px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 1279px)
+{
+    .ability-text-box{
+        margin-bottom: 50px;
+    }
+}
