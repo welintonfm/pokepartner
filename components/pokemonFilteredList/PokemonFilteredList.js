@@ -46,11 +46,9 @@ const PokemonFilteredList = (props) => {
     const [pokemon, setPokemon] = useState('')
     useEffect(() => props.getPokemon(pokemon), [pokemon]);
     useEffect(() => {
-        console.log(props.type)
         if(props.type){
-            console.log('filtrando')
             getPokemonsByType(props.type, setFilteredPokemons)
-        }else{console.log('n filtrando')}
+        }
     },[props.type]);
     return(
         <div className="pokemon-filtered-list">
@@ -60,7 +58,6 @@ const PokemonFilteredList = (props) => {
                         let new_pokemon_list = []
                         new_pokemon_list = filterPokemons(props.pokemons, event.target.value)
                         setFilteredPokemons([...new_pokemon_list])
-                        console.log(filtered_pokemons)
                     }} placeholder="name or number..."/><BiSearch /> </div> :
                     <>
                         <div className="type-filter-container">

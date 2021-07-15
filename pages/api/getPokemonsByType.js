@@ -17,7 +17,6 @@ export default (req, res) => {
        damage_relations: response.data.damage_relations
       })
   }).catch(err => {
-      console.log(err)
       res.status(err.response.status).json({
         message: err.message
     })
